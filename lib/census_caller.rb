@@ -6,4 +6,10 @@ class CensusCaller
 
     response
   end
+
+  def call_dni(document_type , document_number)
+    response = CensusApi.new.call_dni(document_type, document_number)
+    response
+  end
+
 end

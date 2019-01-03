@@ -3,3 +3,8 @@
 # * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#gemfile
 # * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#gemfile
 #
+#oracle
+group :production, :staging do
+    gem 'activerecord-oracle_enhanced-adapter', '~> 1.6.0'
+    gem 'ruby-oci8', '~> 2.2.0'
+end
