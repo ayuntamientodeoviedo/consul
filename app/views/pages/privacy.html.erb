@@ -1,4 +1,4 @@
-<% provide :title do %><%= t("pages.titles.privacy") %><% end %>
+<% provide :title do %><%= t('pages.titles.privacy') %><% end %>
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: page_url("privacy") %>
 <% end %>
@@ -6,28 +6,36 @@
 <div class="row margin-top">
 
   <div class="small-12 medium-9 column">
-    <h1><%= t("pages.privacy.title") %></h1>
-    <h2><%= t("pages.privacy.subtitle") %></h2>
+    <h1>Política de Privacidad</h1>
+      <p>El tratamiento de datos personales realizado a través de este sitio web del Ayuntamiento de Oviedo (en adelante, Ayuntamiento) y se regula según lo establecido en el Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, de 27 de abril de 2016, relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos y demás normativa de aplicación, al objeto de garantizar en todo momento el derecho fundamental a la protección de datos de las personas usuarias del mismo.</p>
+    <h3>Datos personales recopilados</h3>
 
-    <ol>
-      <% t("pages.privacy.info_items").each do |item| %>
-        <% if item.key? :text %>
-          <li><%= item[:text] %></li>
-        <% else %>
-          <ul>
-            <% item[:subitems].each do |subitem| %>
-              <li>
-                <strong> <%= subitem[:field] %></strong>
-                <%= subitem[:description] %>
-              </li>
-            <% end %>
-          </ul>
-        <% end %>
-      <% end %>
-    </ol>
+    <P>
+        El Ayuntamiento de Oviedo informa a los usuarios sobre los extremos establecidos en el artículo 5 de la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal (LOPD) en el tratamiento de datos personales seguida en el presente Sitio Web:
+      </P>
+
+      <Ul>
+        <li>El tratamiento de los datos de personales, recabados a través de los formularios del Sitio Web, tienen como finalidad el mantenimiento de la relación que en su caso se establezca con el usuario así como el desempeño de las tareas de información y otras actividades propias del Ayuntamiento. La finalidad del tratamiento y demás información destinada a cumplir con el artículo 5 de la LOPD será indicada en el Aviso de Protección de Datos establecido en cada uno de los formularios existentes. </li>
+
+        <li>La información de carácter personal que pueda ser remita a través de los correos electrónicos de contacto disponibles en la página será incorporada en el fichero SERVICIO DE ATENCION CIUDADANA, titularidad del Ayuntamiento con la finalidad de gestionar su petición de información, queja o sugerencia o trámite administrativo realizado a través de este medio.</li>
+
+        <li>El Ayuntamiento ha adoptado las medidas técnicas y organizativas, así como los niveles de seguridad exigidos legalmente conforme a lo dispuesto en la LOPD y las normas que la desarrollan.</li>
+
+        <li>Los titulares de los datos podrán ejercitar los derechos de acceso, rectificación, cancelación y oposición, en los términos previstos en la precitada Ley remitiendo un escrito a: Asesoría Jurídica – Ayuntamiento de Oviedo – Plaza de la Constitución, 1 – 33071 OVIEDO (Asturias) o a través del Portal del Ciudadano.</li>
+      </Ul>
+
+      <P>
+        El Ayuntamiento no autoriza a los menores de 14 años a facilitar sus datos personales, ya sea mediante la cumplimentación de los formularios web habilitados para la solicitud de servicios, de contacto o mediante el envío de correos electrónicos.
+      </P>
+
+      <P>
+        Por tanto, quienes faciliten datos personales utilizando dichos medios manifiestan formalmente ser mayor de 14 años. Respecto a la recogida de datos de menores de edad, con edad comprendida entre 14 y 18 años, el Ayuntamiento, en ningún caso, recabará datos económicos o relativos a otros miembros de su familia sin el consentimiento de las personas titulares de los mismos.
+      </P>
   </div>
 
   <div class="small-12 medium-3 column">
     <%= render '/shared/print' %>
   </div>
+
 </div>
+
