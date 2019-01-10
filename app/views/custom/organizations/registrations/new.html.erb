@@ -1,0 +1,47 @@
+<% provide :title do %><%= t("devise_views.organizations.registrations.new.title") %><% end %>
+<h2><%= t("devise_views.organizations.registrations.new.title") %></h2>
+
+ <%= form_for(resource, as: :user, url: organization_registration_path) do |f| %>
+   <%= render 'shared/errors', resource: resource %>
+   <div class="row">
+     <div class="small-12 column">
+
+      <%= f.fields_for :organization do |fo| %>
+        <%= fo.text_field :name, autofocus: true, maxlength: Organization.name_max_length, placeholder: t("devise_views.organizations.registrations.new.organization_name_label") %>
+        <%= fo.label :responsible_name %>
+        <p class="help-text" id="responsible-name-help-text"><%= t("devise_views.organizations.registrations.new.responsible_name_note") %></p>
+        <%= fo.text_field :responsible_name, placeholder: t("devise_views.organizations.registrations.new.responsible_name_label"),
+                                             maxlength: Organization.responsible_name_max_length, label: false,
+                                             aria: {describedby: "responsible-name-help-text"} %>
+      <% end %>
+
+      <%= f.email_field :email, placeholder: t("devise_views.organizations.registrations.new.email_label") %>
+
+      <%= f.text_field  :phone_number,  placeholder: t("devise_views.organizations.registrations.new.phone_number_label") %>
+
+      <%= f.invisible_captcha :address %>
+
+      <%= f.password_field :password, autocomplete: "off",
+                           placeholder: t("devise_views.organizations.registrations.new.password_label") %>
+
+      <%= f.password_field :password_confirmation, autocomplete: "off",
+                           label: t("devise_views.organizations.registrations.new.password_confirmation_label"),
+                           placeholder: t("devise_views.organizations.registrations.new.password_confirmation_label") %>
+
+      <%= f.label :terms_of_service do %>
+        <%= f.check_box :terms_of_service, title: t('devise_views.users.registrations.new.terms_title'), label: false %>
+        <span class="checkbox">
+          <%= t("devise_views.users.registrations.new.terms",
+              terms: link_to(t("devise_views.users.registrations.new.terms_link"), "/conditions", title: t('shared.target_blank_html'), target: "_blank")).html_safe %></span>
+      <% end %>
+
+      <p>AVISO DE PROTECCIÓN DE DATOS – DEBER DE INFORMACIÓN Según establece en la vigente normativa de protección de datos se le informa que los datos recabados a través del presente formulario serán tratados por el Ayuntamiento de Oviedo con la finalidad tramitar y gestionar su alta en la plataforma de participación ciudadana. La licitud del tratamiento está basada en el artículo 6.1.e) del RGPD: Ley 7/1985, de 2 de abril, Reguladora de las Bases del Régimen Local. No están previstas comunicaciones de datos a terceros salvo obligación legal, ni están previstas transferencias a terceros países u organizaciones internacionales. Los datos serán conservados durante el tiempo que necesario para cumplir con la finalidad para la que se recabaron y para determinar las posibles responsabilidades que se pudieran derivar de dicha finalidad y del tratamiento de los datos. Podrá ejercitar los derechos de acceso, rectificación, supresión, así como otros derechos, ante la Asesoría Jurídica del Ayuntamiento de Oviedo - Plaza de la Constitución, 1 - 33071 OVIEDO (Asturias) indicando en el asunto: Ref. Protección de Datos o a través de la Sede Electrónica:sede.oviedo.es. Así mismo, podrá ponerse en contacto con el Delegado de Protección de Datos a través del correo electrónico: dpd@oviedo.es. Si en el ejercicio de sus derechos el denunciante no ha sido debidamente atendido podrá presentar una reclamación ante la Agencia Española de Protección de Datos (www.agpd.es).</p>
+
+      <div class="small-12 medium-6 small-centered">
+        <%= f.submit t("devise_views.organizations.registrations.new.submit"), class: "button expanded" %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
