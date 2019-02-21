@@ -187,6 +187,7 @@ es:
       conditions: Condiciones de uso
       help: "¿Qué es %{org}? - Participación ciudadana"
       privacy: Política de Privacidad
+      conoce_el_proceso: Conoce el proceso
     verify:
       code: Código que has recibido en tu carta
       email: Email
