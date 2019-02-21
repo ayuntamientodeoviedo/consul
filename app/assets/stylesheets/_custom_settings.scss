@@ -3,3 +3,8 @@
 // * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#css
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
+$gray:              #E3E3E3;
+$gray-light:        darken($gray, 10%);
+
+$footer-border:     #C8C8C8;
+$footer-background:   $gray;
