@@ -17,6 +17,21 @@
 .push {
   min-height: initial;
 }
+.float-right {
+  float: right;
+}
+.float-left {
+  float: left;
+}
+
+
+
+/* Images */
+.img-text {
+  width: 100%;
+  max-width: 250px;
+  margin: 30px;
+}
 
 
 
@@ -29,6 +44,12 @@
 .m-50 {
   margin-top: 50px;
   margin-bottom: 50px;
+}
+.mt-0 {
+  margin-top: 0px;
+}
+.m-initial {
+  margin: initial;
 }
 
 
@@ -264,6 +285,21 @@ header {
     object-fit: cover;
   }
 }
+#header-img {
+  background-image: url("top_header_1.jpg");
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  margin-top: -$line-height;
+
+  h1 {
+    text-align: center;
+    margin-top: 175px;
+    background: rgba(255,255,255,.66);
+    color: #174D7F;
+    padding: 15px;
+  }
+}
 
 
 /*************************************************/
@@ -388,7 +424,7 @@ position: relative;
 /*************************************************/
 .call-action {
   height: auto;
-  background: #F6F4F4;
+  /*background: #F6F4F4;*/
   padding: 30px 0px;
 
   a.call-action-block {
