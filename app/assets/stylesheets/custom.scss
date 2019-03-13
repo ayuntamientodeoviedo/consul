@@ -32,6 +32,12 @@
   max-width: 250px;
   margin: 30px;
 }
+.img-medium-300 {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: cover;
+}
 
 
 
@@ -286,7 +292,7 @@ header {
   }
 }
 #header-img {
-  background-image: image-url("top_header_1.jpg");
+  background-image: image-url("top_header_2.jpg");
   height: 500px;
   background-size: cover;
   background-position: center;
