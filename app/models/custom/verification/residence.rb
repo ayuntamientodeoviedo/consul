@@ -35,7 +35,6 @@ class Verification::Residence
     user.update(document_number:       document_number,
                 document_type:         document_type,
                 date_of_birth:         date_of_birth.to_datetime,
-                gender:                gender,
                 residence_verified_at: Time.current,
                 verified_at:           Time.current)
 
